@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Epilogue", sans-serif;
+    background-color: hsl(0, 0%, 98%);
+    height: 100vh;
+}
+
+a{
+    text-decoration: none;
+    color: hsl(0, 0%, 41%)
+}
+
+
+nav {
+    padding: 1rem 3rem;
+    min-height: 2rem;
+}
+.desktop-menu {
+    display: flex;
+    padding: 1rem 3rem;
+}
+.desktop-menu li:first-child {
+    margin-right: 1rem;
+}
+nav ul{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+nav li {
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+nav a:hover {
+    color: hsl(0, 0%, 8%);
+}
+.dropdown-options {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: 0;
+    width: 200px;
+    background-color: plum;
+}
+.dropdown-options a {
+    display: flex;
+}
+
+.mobile-header {
+    display: none;
+}
+
+.hamburger {
+    position: relative;
+    display: block;
+    width: 35px;
+    cursor: pointer;
+    appearance: none;
+    background: none;
+    outline: none;
+    border: none;
+    z-index: 99;
+}
+.hamburger .bar, .hamburger::after, .hamburger::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 5px;
+    background-color: hsl(0, 0%, 8%);
+    margin: 6px 0px;
+}
+.hamburger.is-active::before {
+    transform: rotate(-45deg) translate(-9px, 7px);
+    transition: all 0.3s ease-in-out;
+}
+.hamburger.is-active::after {
+    transform: rotate(45deg) translate(-8px, -6px);
+    transition: all 0.3s ease-in-out;
+}
+.hamburger.is-active .bar {
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.mobile-menu {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    min-height: 100vh;
+    width: 70%;
+    z-index: 98;
+    padding-top: 5rem;
+    background-color: hsl(0, 0%, 98%);
+    transition: 0.3s ease-in-out;
+
+    ul {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .login-signup {
+        flex-direction: column;
+    }
+}
+.mobile-menu.is-active {
+    right: 0;
+    box-shadow: -45vh 0px 20px 40px rgb(0 0 0 / 80%);
+}
+
+.login-signup {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+
+main {
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#container {
+    width: 1200px;
+    margin: 0rem 3rem;
+}
+
+.row{
+    display: flex;
+}
+
+.left-pane {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-right: 3rem;
+}
+.inner-left {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+.left-pane:last-child {
+    margin-top: 30px;
+}
+
+.right-pane {
+    background: url(./images/image-hero-desktop.png);
+    height: 60vh;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    flex: 1;
+}
+
+
+
+.btn {
+    border: 2px solid hsl(0, 0%, 41%);
+    border-radius: 10px;
+    padding: 10px 20px;
+    width: auto;
+}
+.btn-full {
+    background-color: hsl(0, 0%, 8%);
+    border-color: hsl(0, 0%, 8%);
+    color: hsl(0, 0%, 98%);
+}
+.btn-full:hover {
+    background-color: hsl(0, 0%, 98%);
+    color: hsl(0, 0%, 8%);
+    transition: all 0.3s ease-in-out;
+}
+.btn-empty {
+    color: hsl(0, 0%, 8%);
+    border: 0;
+}
+
+
+.logos ul{
+    display: flex;
+    gap: 3rem;
+}
+
+h1{
+    font-size: 45pt;
+}
+
+p {
+    line-height: 23pt;
+    font-size: 18px;
+}
+
+li {
+    list-style: none;
+}
+li img{
+    width: 100%;
+}
+
+
+@media (max-width: 874px) {
+    
+    .desktop-menu {
+        display: none;
+    }
+    nav ul {
+        gap: 10px;
+    }
+    .mobile-header {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+        font-size: 28px;
+    }
+    .mobile-menu a{
+        font-size: 28px;
+    }
+    
+    .login-signup {
+        margin-top: 3rem;
+    }
+
+    #container {
+        width: 100%;
+        margin: 0;
+    }
+
+    .row {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+
+    .left-pane {
+        padding: 3rem 1rem;
+        text-align: center;
+    }
+
+    .right-pane {
+        background: url(./images/image-hero-mobile.png);
+        background-position: bottom;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    .inner-right {
+        height: 400px;
+    }
+
+    .logos ul{
+        margin-top: 4rem;
+        justify-content: center;
+    }
+
+    h1 {
+        font-size: 30pt;
+    }
+
+}
+

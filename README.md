@@ -1,2 +1,2 @@
 # Intro-section-with-dropdown-navigation
-creating a fun website intro section with a responsive dropdown navigation
+learning to make a responsive header navigation. This is a tough one...
